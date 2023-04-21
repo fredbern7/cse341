@@ -1,8 +1,9 @@
-var http = require('http');
+var express = require('express');
+var app = express();
+const port = process.env.PORT || 3000
 
-var server = http.createServer(function (req, res) {
-   
+app.use('/', require('./routes'));
 
+app.listen(port, () => {
+    console.log(`Server is running on ${port}`);
 });
-server.listen(5000);
-console.log('Node.js web server at port 5000 is running..')
