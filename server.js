@@ -1,12 +1,9 @@
 var express = require('express');
 var app = express();
+const port = process.env.PORT || 3000
 
-const routes = require('express').Router();
+app.use('/', require('./routes'));
 
-routes.get('/', (req, res, next) => {
-    res.json('Awesome person');
-});
-
-app.listen(3000, () => {
-    console.log('Server is running on 300');
+app.listen(port, () => {
+    console.log(`Server is running on ${port}`);
 });
