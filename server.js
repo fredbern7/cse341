@@ -1,10 +1,12 @@
 // express web server
 const express = require('express');
-const { emilyRoute, hannaRoute } = require('./controller/lesson1');
+const { emilyRoute, hannaRoute, sarahRoute } = require('./controller/lesson1');
 const app = express();
 
 
-app.get('/', emilyRoute);
+app.get('/', sarahRoute);
+
+app.get('/emily', emilyRoute);
 
 app.get('/hanna', hannaRoute);
 
